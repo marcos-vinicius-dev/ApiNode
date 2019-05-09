@@ -1,15 +1,19 @@
-const request = require('supertest');
+let request = require('supertest');
 
-const app = require('../../src/app')
-const { Categorias } = require("../../src/app/models");
-const truncate = require('../../__utils/truncate');
+let app = require('../../src/app')
+let { Categorias } = require("../../src/app/models");
+let truncate = require('../../__utils/truncate');
 
 describe("Criar Categoria", () => {
     beforeEach(async () => {
         await truncate();
+        Categorias.destroy({
+            where: {},
+            truncate: true
+        });
     });
     it("a rota /categorias deve retornar um status 200, caso cadastrada com sucesso", async () => {
-        const response = await request(app)
+        let response = await request(app)
             .post("/categorias")
             .send({
                 nome: 'teste4', 
@@ -18,7 +22,7 @@ describe("Criar Categoria", () => {
         expect(response.status).toBe(200);
     });
     it("a rota /categorias não deve permitir cadastro caso tenha campos em branco", async () => {
-        const response = await request(app)
+        let response = await request(app)
             .post("/categorias")
             .send({
                 nome: 'teste4', 
@@ -27,11 +31,11 @@ describe("Criar Categoria", () => {
         expect(response.status).toBe(400);
     });
     it("a rota /categorias não deve permitir cadastro caso tenha já exista uma categoria com o mesmo nome no banco de dados", async () => {
-        const categoria = await Categorias.create({
+        let categoria = await Categorias.create({
             "nome":"informatica",
             "juros":"10"
         });
-        const response = await request(app)
+        let response = await request(app)
             .post("/categorias")
             .send({
                 nome: 'informatica', 
@@ -44,29 +48,33 @@ describe("Criar Categoria", () => {
 describe("Editar Categoria", () => {
     beforeEach(async () => {
         await truncate();
+        Categorias.destroy({
+            where: {},
+            truncate: true
+        });
     });
     it("a rota put: /categorias/:id deve editar uma categoria caso os dados estejam preenchidos corretamente", async () => {
-        const categoria = await Categorias.create({
-            "id": "1",
+        let categoria = await Categorias.create({
+            "id": "01",
             "nome":"informatica",
             "juros":"10"
         });
-        const response = await request(app)
-            .put("/categorias/1")
+        let response = await request(app)
+            .put("/categorias/01")
             .send({
                 "nome":"informatica",
-                "juros":"1"
+                "juros": categoria.id
             });
         expect(response.status).toBe(200);
     });
     it("a rota put: /categorias/:id não deve editar uma categoria caso possuir campos em branco", async () => {
-        const categoria = await Categorias.create({
+        let categoria = await Categorias.create({
             "id": "1",
             "nome":"informatica",
             "juros":"10"
         });
-        const response = await request(app)
-            .put("/categorias/1")
+        let response = await request(app)
+            .put("/categorias/" + categoria.id + "")
             .send({
                 "nome":"",
                 "juros":"10"
@@ -74,13 +82,8 @@ describe("Editar Categoria", () => {
         expect(response.status).toBe(400);
     });
     it("a rota put: /categorias/:id não deve editar uma categoria caso a categoria não existir", async () => {
-        const categoria = await Categorias.create({
-            "id": "1",
-            "nome":"informatica",
-            "juros":"10"
-        });
-        const response = await request(app)
-            .put("/categorias/10")
+        let response = await request(app)
+            .put("/categorias/1000")
             .send({
                 "nome":"informatica",
                 "juros":"10"
