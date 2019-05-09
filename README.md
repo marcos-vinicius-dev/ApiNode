@@ -31,7 +31,7 @@ Rota para acessar a documentação localhost:http://localhost:3000/api-docs/
 - [x] TDD Desenvolvimento orientado a teste
 - [x] Uso de validadores na rota.
 - [ ] Testes unitários.
-- [ ] Testes de integração.
+- [x] Testes de integração.
 - [x] Documentação.
  
 ## Rotas
