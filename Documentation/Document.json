@@ -1,0 +1,438 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "AdviseApi",
+    "description": "",
+    "contact": {}
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/categorias": {
+      "get": {
+        "description": "",
+        "summary": "Listar categorias",
+        "tags": [
+          "Categoria"
+        ],
+        "operationId": "CategoriasGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "summary": "Criar categoria",
+        "tags": [
+          "Categoria"
+        ],
+        "operationId": "CategoriasPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CriarcategoriaRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categorias/3": {
+      "delete": {
+        "description": "",
+        "summary": "Deletar categoria",
+        "tags": [
+          "Categoria"
+        ],
+        "operationId": "Categorias3Delete",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categorias/7": {
+      "get": {
+        "description": "",
+        "summary": "Busca categoria",
+        "tags": [
+          "Categoria"
+        ],
+        "operationId": "Categorias7Get",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categorias/1": {
+      "put": {
+        "description": "",
+        "summary": "Editar Categoria",
+        "tags": [
+          "Categoria"
+        ],
+        "operationId": "Categorias1Put",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditarCategoriaRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/produtos": {
+      "get": {
+        "description": "",
+        "summary": "Listar produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "ProdutosGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "summary": "Criar produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "ProdutosPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CriarprodutoRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/produtos/3": {
+      "delete": {
+        "description": "",
+        "summary": "Deletar produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "Produtos3Delete",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/produtos/1": {
+      "get": {
+        "description": "",
+        "summary": "Busca produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "Produtos1Get",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/produtos/7": {
+      "put": {
+        "description": "",
+        "summary": "Editar produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "Produtos7Put",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditarprodutoRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CriarprodutoRequest": {
+      "title": "CriarprodutoRequest",
+      "example": {
+        "nome": "computador",
+        "descricao": "desktop",
+        "valor": "1",
+        "idcategoria": "1"
+      },
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "descricao": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
+        },
+        "idcategoria": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nome",
+        "descricao",
+        "valor",
+        "idcategoria"
+      ]
+    },
+    "EditarprodutoRequest": {
+      "title": "EditarprodutoRequest",
+      "example": {
+        "nome": "computador1",
+        "descricao": "s",
+        "valor": "100",
+        "idcategoria": "1"
+      },
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "descricao": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
+        },
+        "idcategoria": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nome",
+        "descricao",
+        "valor",
+        "idcategoria"
+      ]
+    },
+    "CriarcategoriaRequest": {
+      "title": "CriarcategoriaRequest",
+      "example": {
+        "nome": "Informatidddca23scsXDDdsYD",
+        "juros": "10"
+      },
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "juros": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nome",
+        "juros"
+      ]
+    },
+    "EditarCategoriaRequest": {
+      "title": "EditarCategoriaRequest",
+      "example": {
+        "nome": "Informatica1",
+        "juros": "sd"
+      },
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "juros": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nome",
+        "juros"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Categoria",
+      "description": ""
+    },
+    {
+      "name": "Produto",
+      "description": ""
+    }
+  ]
+}
