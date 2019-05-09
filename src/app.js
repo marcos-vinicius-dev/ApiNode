@@ -1,12 +1,7 @@
-var dotenv = require('dotenv');
-
-if(process.env.NODE_ENV="test"){
-  dotenv.config({path: '.env.test'}); // most important values
-}else{
-  dotenv.config({path: '.env'}); // fill in the gaps
-}
-  
+require('dotenv-flow').config();
   const express = require("express");
+  const swaggerUi = require('swagger-ui-express');
+  const swaggerDocument = require('../Documentation/Document.json');
   
   class AppController {
     constructor() {
@@ -17,11 +12,12 @@ if(process.env.NODE_ENV="test"){
     }
   
     middlewares() {
+      this.express.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
       this.express.use(express.json());
     }
   
     routes() {
-      this.express.use(require("./routes"));
+      this.express.use(require("./router"));
     }
   }
   

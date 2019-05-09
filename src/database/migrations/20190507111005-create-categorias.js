@@ -12,10 +12,13 @@ module.exports = {
       nome: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true,
+        unique: {
+          name: 'Categoria_nome',
+          msg: 'Categoria existente'
+        },
       },
       juros: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       created_at: {

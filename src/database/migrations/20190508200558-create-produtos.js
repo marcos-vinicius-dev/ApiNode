@@ -18,7 +18,7 @@ module.exports = {
         allowNull: false,
       },
       valor: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       idCategoria: {
