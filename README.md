@@ -32,7 +32,7 @@ Altere os dados do arquivo .env para as credenciais de seu banco de dados
 
 - [x] TDD Desenvolvimento orientado a teste
 - [x] Uso de validadores na rota.
-- [ ] Testes unitários.
+- [x] Testes unitários.
 - [x] Testes de integração.
 - [x] Documentação.
  
