@@ -27,6 +27,8 @@ Rodar testes
 ## Detalhes
 
 Rota para acessar a documentação localhost:http://localhost:3000/api-docs/
+#### Credenciais Banco de dados
+Altere os dados do arquivo .env para as credenciais de seu banco de dados
 
 - [x] TDD Desenvolvimento orientado a teste
 - [x] Uso de validadores na rota.
