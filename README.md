@@ -7,7 +7,9 @@ Nodej, Express, Sequelize
 
 ## Como rodar o projeto
 ### criar um banco
-create database adviseapi
+
+    create database adviseapi
+
 ### Instalar depencias
 
     Yarn install
