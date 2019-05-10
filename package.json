@@ -6,7 +6,7 @@
   "scripts": {
     "test1": "cross-env NODE_ENV=test sequelize db:migrate:undo:all && yarn testdb",
     "pretest": "cross-env NODE_ENV=test sequelize db:migrate",
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "jest",
     "posttest": "cross-env NODE_ENV=test sequelize db:migrate:undo:all",
     "dev": "nodemon src/server.js --ignore __tests__",
     "start": "node src/server.js"
