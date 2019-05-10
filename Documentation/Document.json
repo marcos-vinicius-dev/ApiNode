@@ -2,15 +2,13 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0",
-    "title": "AdviseApi",
-    "description": "",
+    "title": "ApiAdvise",
+    "description": "API REST para gerenciar produtos e categorias de produtos.",
     "contact": {}
   },
-  "host": "localhost:3000",
+  "host": "http:",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": [],
   "consumes": [
     "application/json"
   ],
@@ -18,14 +16,197 @@
     "application/json"
   ],
   "paths": {
-    "/categorias": {
-      "get": {
-        "description": "",
-        "summary": "Listar categorias",
+    "//localhost:3000/produtos": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Criar produto",
         "tags": [
-          "Categoria"
+          "Produto"
         ],
-        "operationId": "CategoriasGet",
+        "operationId": "Localhost3000ProdutosPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CriarprodutoRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Criarproduto"
+            },
+            "examples": {
+              "application/json": {
+                "id": 12,
+                "nome": "computador",
+                "descricao": "desktop",
+                "valor": "1",
+                "idcategoria": "1",
+                "updatedAt": "2019-05-10T03:46:25.65Z",
+                "createdAt": "2019-05-10T03:46:25.65Z"
+              }
+            },
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Listar produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "Localhost3000ProdutosGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Listarproduto"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "id": 7,
+                  "nome": "computador1",
+                  "descricao": "s",
+                  "valor": 100,
+                  "createdAt": "2019-05-09T14:58:05Z",
+                  "updatedAt": "2019-05-09T15:03:55Z",
+                  "idcategoria": 1
+                },
+                {
+                  "id": 8,
+                  "nome": "computador",
+                  "descricao": "desktop",
+                  "valor": 1,
+                  "createdAt": "2019-05-09T18:59:52Z",
+                  "updatedAt": "2019-05-09T18:59:52Z",
+                  "idcategoria": 1
+                },
+                {
+                  "id": 9,
+                  "nome": "computador",
+                  "descricao": "desktop",
+                  "valor": 1,
+                  "createdAt": "2019-05-09T18:59:55Z",
+                  "updatedAt": "2019-05-09T18:59:55Z",
+                  "idcategoria": 1
+                },
+                {
+                  "id": 10,
+                  "nome": "computador",
+                  "descricao": "desktop",
+                  "valor": 1,
+                  "createdAt": "2019-05-09T18:59:56Z",
+                  "updatedAt": "2019-05-09T18:59:56Z",
+                  "idcategoria": 1
+                },
+                {
+                  "id": 11,
+                  "nome": "computador",
+                  "descricao": "desktop",
+                  "valor": 1,
+                  "createdAt": "2019-05-10T00:32:30Z",
+                  "updatedAt": "2019-05-10T00:32:30Z",
+                  "idcategoria": 1
+                },
+                {
+                  "id": 12,
+                  "nome": "computador",
+                  "descricao": "desktop",
+                  "valor": 1,
+                  "createdAt": "2019-05-10T03:46:25Z",
+                  "updatedAt": "2019-05-10T03:46:25Z",
+                  "idcategoria": 1
+                }
+              ]
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "//localhost:3000/produtos/8": {
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Editar produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "Localhost3000Produtos8Put",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditarprodutoRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "examples": {
+              "application/json": [
+                1
+              ]
+            },
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Deletar produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "Localhost3000Produtos8Delete",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -41,18 +222,89 @@
           }
         }
       },
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Busca produto",
+        "tags": [
+          "Produto"
+        ],
+        "operationId": "Localhost3000Produtos8Get",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Buscaproduto"
+            },
+            "examples": {
+              "application/json": {
+                "id": 8,
+                "nome": "computador",
+                "descricao": "desktop",
+                "valor": 1,
+                "createdAt": "2019-05-09T18:59:52Z",
+                "updatedAt": "2019-05-09T18:59:52Z",
+                "idcategoria": 1
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Valor parcela",
+        "tags": [
+          "Parcelas"
+        ],
+        "operationId": "UnnammedEndpointGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Valorparcela"
+            },
+            "examples": {
+              "application/json": {
+                "Valor_Parcela": 50.751243781094381
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "//localhost:3000/categorias": {
       "post": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Criar categoria",
         "tags": [
-          "Categoria"
+          "Categorias"
         ],
-        "operationId": "CategoriasPost",
+        "operationId": "Localhost3000CategoriasPost",
         "deprecated": false,
         "produces": [
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
           {
             "name": "Body",
             "in": "body",
@@ -61,58 +313,34 @@
             "schema": {
               "$ref": "#/definitions/CriarcategoriaRequest"
             }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
           }
         ],
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "type": "object"
+              "$ref": "#/definitions/Criarcategoria"
+            },
+            "examples": {
+              "application/json": {
+                "id": 9,
+                "nome": "Informatica",
+                "juros": "0.1",
+                "updatedAt": "2019-05-10T04:03:13.619Z",
+                "createdAt": "2019-05-10T04:03:13.619Z"
+              }
             },
             "headers": {}
           }
         }
-      }
-    },
-    "/categorias/3": {
-      "delete": {
-        "description": "",
-        "summary": "Deletar categoria",
-        "tags": [
-          "Categoria"
-        ],
-        "operationId": "Categorias3Delete",
-        "deprecated": false,
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object"
-            },
-            "headers": {}
-          }
-        }
-      }
-    },
-    "/categorias/7": {
+      },
       "get": {
-        "description": "",
-        "summary": "Busca categoria",
+        "description": "TODO: Add Description",
+        "summary": "Listar categorias",
         "tags": [
-          "Categoria"
+          "Categorias"
         ],
-        "operationId": "Categorias7Get",
+        "operationId": "Localhost3000CategoriasGet",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -122,21 +350,84 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "object"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Listarcategoria"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "id": 1,
+                  "nome": "Informatica1",
+                  "juros": 0,
+                  "createdAt": "2019-05-09T14:58:00Z",
+                  "updatedAt": "2019-05-09T19:06:11Z"
+                },
+                {
+                  "id": 2,
+                  "nome": "Informatidddca23scsXDDdsYD",
+                  "juros": 10,
+                  "createdAt": "2019-05-09T14:59:04Z",
+                  "updatedAt": "2019-05-09T14:59:04Z"
+                },
+                {
+                  "id": 3,
+                  "nome": "Informatidddca23scsXDDdsYD",
+                  "juros": 10,
+                  "createdAt": "2019-05-09T15:01:48Z",
+                  "updatedAt": "2019-05-09T15:01:48Z"
+                },
+                {
+                  "id": 4,
+                  "nome": "Informatidddca23scsXDDdsYD",
+                  "juros": 10,
+                  "createdAt": "2019-05-09T15:01:49Z",
+                  "updatedAt": "2019-05-09T15:01:49Z"
+                },
+                {
+                  "id": 5,
+                  "nome": "Informatidddca23scsXDDdsYD",
+                  "juros": 10,
+                  "createdAt": "2019-05-09T15:01:50Z",
+                  "updatedAt": "2019-05-09T15:01:50Z"
+                },
+                {
+                  "id": 6,
+                  "nome": "Informatidddca23scsXDDdsYD",
+                  "juros": 10,
+                  "createdAt": "2019-05-09T15:01:51Z",
+                  "updatedAt": "2019-05-09T15:01:51Z"
+                },
+                {
+                  "id": 7,
+                  "nome": "Informatidddca23scsXDDdsYD",
+                  "juros": 10,
+                  "createdAt": "2019-05-09T15:01:52Z",
+                  "updatedAt": "2019-05-09T15:01:52Z"
+                },
+                {
+                  "id": 8,
+                  "nome": "Informatidddca23scsXDDdsYD",
+                  "juros": 10,
+                  "createdAt": "2019-05-09T15:01:52Z",
+                  "updatedAt": "2019-05-09T15:01:52Z"
+                }
+              ]
             },
             "headers": {}
           }
         }
       }
     },
-    "/categorias/1": {
+    "//localhost:3000/categorias/1": {
       "put": {
-        "description": "",
+        "description": "TODO: Add Description",
         "summary": "Editar Categoria",
         "tags": [
-          "Categoria"
+          "Categorias"
         ],
-        "operationId": "Categorias1Put",
+        "operationId": "Localhost3000Categorias1Put",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -150,34 +441,34 @@
             "schema": {
               "$ref": "#/definitions/EditarCategoriaRequest"
             }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
           }
         ],
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "type": "object"
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "examples": {
+              "application/json": [
+                0
+              ]
             },
             "headers": {}
           }
         }
-      }
-    },
-    "/produtos": {
-      "get": {
-        "description": "",
-        "summary": "Listar produto",
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Deletar categoria",
         "tags": [
-          "Produto"
+          "Categorias"
         ],
-        "operationId": "ProdutosGet",
+        "operationId": "Localhost3000Categorias1Delete",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -193,78 +484,13 @@
           }
         }
       },
-      "post": {
-        "description": "",
-        "summary": "Criar produto",
-        "tags": [
-          "Produto"
-        ],
-        "operationId": "ProdutosPost",
-        "deprecated": false,
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/CriarprodutoRequest"
-            }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object"
-            },
-            "headers": {}
-          }
-        }
-      }
-    },
-    "/produtos/3": {
-      "delete": {
-        "description": "",
-        "summary": "Deletar produto",
-        "tags": [
-          "Produto"
-        ],
-        "operationId": "Produtos3Delete",
-        "deprecated": false,
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object"
-            },
-            "headers": {}
-          }
-        }
-      }
-    },
-    "/produtos/1": {
       "get": {
-        "description": "",
-        "summary": "Busca produto",
+        "description": "TODO: Add Description",
+        "summary": "Busca categoria",
         "tags": [
-          "Produto"
+          "Categorias"
         ],
-        "operationId": "Produtos1Get",
+        "operationId": "Localhost3000Categorias1Get",
         "deprecated": false,
         "produces": [
           "application/json"
@@ -274,48 +500,16 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "object"
+              "$ref": "#/definitions/Buscacategoria"
             },
-            "headers": {}
-          }
-        }
-      }
-    },
-    "/produtos/7": {
-      "put": {
-        "description": "",
-        "summary": "Editar produto",
-        "tags": [
-          "Produto"
-        ],
-        "operationId": "Produtos7Put",
-        "deprecated": false,
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Body",
-            "in": "body",
-            "required": true,
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/EditarprodutoRequest"
-            }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object"
+            "examples": {
+              "application/json": {
+                "id": 1,
+                "nome": "Informatica1",
+                "juros": 0,
+                "createdAt": "2019-05-09T14:58:00Z",
+                "updatedAt": "2019-05-09T19:06:11Z"
+              }
             },
             "headers": {}
           }
@@ -324,6 +518,46 @@
     }
   },
   "definitions": {
+    "CriarcategoriaRequest": {
+      "title": "CriarcategoriaRequest",
+      "example": {
+        "nome": "Informatica",
+        "juros": "0.1"
+      },
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "juros": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nome",
+        "juros"
+      ]
+    },
+    "EditarCategoriaRequest": {
+      "title": "EditarCategoriaRequest",
+      "example": {
+        "nome": "Informatica",
+        "juros": "10"
+      },
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "juros": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nome",
+        "juros"
+      ]
+    },
     "CriarprodutoRequest": {
       "title": "CriarprodutoRequest",
       "example": {
@@ -357,9 +591,9 @@
     "EditarprodutoRequest": {
       "title": "EditarprodutoRequest",
       "example": {
-        "nome": "computador1",
-        "descricao": "s",
-        "valor": "100",
+        "nome": "Celular",
+        "descricao": "android",
+        "valor": "1",
         "idcategoria": "1"
       },
       "type": "object",
@@ -384,55 +618,296 @@
         "idcategoria"
       ]
     },
-    "CriarcategoriaRequest": {
-      "title": "CriarcategoriaRequest",
+    "Valorparcela": {
+      "title": "Valorparcela",
       "example": {
-        "nome": "Informatidddca23scsXDDdsYD",
-        "juros": "10"
+        "Valor_Parcela": 50.751243781094381
       },
       "type": "object",
       "properties": {
-        "nome": {
-          "type": "string"
-        },
-        "juros": {
-          "type": "string"
+        "Valor_Parcela": {
+          "type": "number",
+          "format": "double"
         }
       },
       "required": [
-        "nome",
-        "juros"
+        "Valor_Parcela"
       ]
     },
-    "EditarCategoriaRequest": {
-      "title": "EditarCategoriaRequest",
+    "Criarcategoria": {
+      "title": "Criarcategoria",
       "example": {
-        "nome": "Informatica1",
-        "juros": "sd"
+        "id": 9,
+        "nome": "Informatica",
+        "juros": "0.1",
+        "updatedAt": "2019-05-10T04:03:13.619Z",
+        "createdAt": "2019-05-10T04:03:13.619Z"
       },
       "type": "object",
       "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
         "nome": {
           "type": "string"
         },
         "juros": {
           "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
         }
       },
       "required": [
+        "id",
         "nome",
-        "juros"
+        "juros",
+        "updatedAt",
+        "createdAt"
+      ]
+    },
+    "Listarcategoria": {
+      "title": "Listarcategoria",
+      "example": {
+        "id": 1,
+        "nome": "Informatica1",
+        "juros": 0,
+        "createdAt": "2019-05-09T14:58:00Z",
+        "updatedAt": "2019-05-09T19:06:11Z"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        },
+        "nome": {
+          "example": "Informatica1",
+          "type": "string"
+        },
+        "juros": {
+          "example": 0,
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "example": "2019-05-09T14:58:00Z",
+          "type": "string"
+        },
+        "updatedAt": {
+          "example": "2019-05-09T19:06:11Z",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "nome",
+        "juros",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Buscacategoria": {
+      "title": "Buscacategoria",
+      "example": {
+        "id": 1,
+        "nome": "Informatica1",
+        "juros": 0,
+        "createdAt": "2019-05-09T14:58:00Z",
+        "updatedAt": "2019-05-09T19:06:11Z"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "juros": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "nome",
+        "juros",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Criarproduto": {
+      "title": "Criarproduto",
+      "example": {
+        "id": 12,
+        "nome": "computador",
+        "descricao": "desktop",
+        "valor": "1",
+        "idcategoria": "1",
+        "updatedAt": "2019-05-10T03:46:25.65Z",
+        "createdAt": "2019-05-10T03:46:25.65Z"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "descricao": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
+        },
+        "idcategoria": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "nome",
+        "descricao",
+        "valor",
+        "idcategoria",
+        "updatedAt",
+        "createdAt"
+      ]
+    },
+    "Listarproduto": {
+      "title": "Listarproduto",
+      "example": {
+        "id": 7,
+        "nome": "computador1",
+        "descricao": "s",
+        "valor": 100,
+        "createdAt": "2019-05-09T14:58:05Z",
+        "updatedAt": "2019-05-09T15:03:55Z",
+        "idcategoria": 1
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "example": 7,
+          "type": "integer",
+          "format": "int32"
+        },
+        "nome": {
+          "example": "computador1",
+          "type": "string"
+        },
+        "descricao": {
+          "example": "s",
+          "type": "string"
+        },
+        "valor": {
+          "example": 100,
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "example": "2019-05-09T14:58:05Z",
+          "type": "string"
+        },
+        "updatedAt": {
+          "example": "2019-05-09T15:03:55Z",
+          "type": "string"
+        },
+        "idcategoria": {
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id",
+        "nome",
+        "descricao",
+        "valor",
+        "createdAt",
+        "updatedAt",
+        "idcategoria"
+      ]
+    },
+    "Buscaproduto": {
+      "title": "Buscaproduto",
+      "example": {
+        "id": 8,
+        "nome": "computador",
+        "descricao": "desktop",
+        "valor": 1,
+        "createdAt": "2019-05-09T18:59:52Z",
+        "updatedAt": "2019-05-09T18:59:52Z",
+        "idcategoria": 1
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "descricao": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "idcategoria": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id",
+        "nome",
+        "descricao",
+        "valor",
+        "createdAt",
+        "updatedAt",
+        "idcategoria"
       ]
     }
   },
   "tags": [
     {
-      "name": "Categoria",
-      "description": ""
+      "name": "Produto"
     },
     {
-      "name": "Produto",
-      "description": ""
+      "name": "Parcelas"
+    },
+    {
+      "name": "Categorias"
     }
   ]
 }
