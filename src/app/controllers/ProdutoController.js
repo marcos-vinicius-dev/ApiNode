@@ -34,10 +34,6 @@ class produtoController {
     async update(req, res){
         const id = req.params.id;
         try {
-            const ProdutoExiste = await Produtos.findOne({ where: { id }})
-            if(!ProdutoExiste){
-                return res.status(400).json({ message: 'Não existe este produto'});
-            }
             const produto = await Produtos.update(req.body, { where :  { id }  });
             return res.status(200).send(produto);
 
