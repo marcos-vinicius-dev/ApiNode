@@ -1,6 +1,8 @@
 const routes = require('express').Router();
 const CategoriaController = require('./app/controllers/CategotiaController');
 const ProdutoController = require('./app/controllers/ProdutoController');
+const ParcelasController = require('./app/controllers/ParcelasController');
+
 
 routes.post('/categorias', CategoriaController.store);
 routes.get('/categorias', CategoriaController.index); 
@@ -13,5 +15,7 @@ routes.get('/produtos', ProdutoController.index);
 routes.get('/produtos/:id', ProdutoController.show); 
 routes.put('/produtos/:id', ProdutoController.update); 
 routes.delete('/produtos/:id', ProdutoController.destroy);
+
+routes.post('/parcelas', ParcelasController.store);
 
 module.exports = routes;
