@@ -53,4 +53,4 @@ Crud Categoria
 ### Documentação
 - [x] Rota para documentação
 ### Parcelas 
-- [ ] Rota para calcular o valor das parcelas do produto.
+- [x] Rota para calcular o valor das parcelas do produto.
