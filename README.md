@@ -1,4 +1,4 @@
-# Advise - Teste prático para back-end nodejs
+# Advise - Teste prático para back-end node.js
 
 API REST para gerenciar produtos e categorias de produtos. 
 
